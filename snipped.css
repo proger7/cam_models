@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap'); 
+  body {  
+    font-size:14px;
+    font-weight:400;
+    letter-spacing:normal;
+    line-height:1.79;
+    color:#333;
+    font-family:Montserrat,sans-serif;
+    font-style:normal;
+  }  
+body { 
+/* CSS Variables that may have been missed get put on body */ 
+    --title-font-size:  26px;  
+    --subtitle-font-size:  44px;  
+    --flag-size:  37px;  
+} 
+
+* { 
+    border: 0; 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0;
+} 
+
+body { 
+    background-color: #f8f8f9; 
+    font-size: 14px; 
+    font-weight: 400; 
+    letter-spacing: normal; 
+    line-height: 1.79; 
+    overflow-x: hidden;
+} 
+
+body { 
+    color: #333; 
+    font-family: Montserrat,sans-serif; 
+    font-stretch: normal; 
+    font-style: normal;
+} 
+
+html { 
+    scroll-behavior: smooth;
+} 
+
+.card[data-v-1de1fe54]  { 
+    align-items: center; 
+    display: flex;
+} 
+
+.card[data-v-1de1fe54]  { 
+    background: #bf5ea2; 
+    flex-direction: column; 
+    max-width: 700px; 
+    overflow: hidden; 
+    padding: 18px 16px 37px; 
+    position: relative; 
+    width: 100%;
+} 
+
+.wrapper .card[data-v-1de1fe54]::before { 
+    background: linear-gradient(0,rgba(81,43,184,0),rgba(81,43,184,.2) 77.87%); 
+    content: ""; 
+    height: 297px; 
+    position: absolute; 
+    top: 0; 
+    width: 100%; 
+    z-index: 506;
+} 
+
+.wrapper .card[data-v-1de1fe54]::before { 
+    background: linear-gradient(0,#512bb800,#512bb833 77.87%); 
+    content: ""; 
+    height: 297px; 
+    position: absolute; 
+    top: 0; 
+    width: 100%; 
+    z-index: 506;
+} 
+
+.wrapper .card[data-v-1de1fe54]::after { 
+    background: linear-gradient(180deg,rgba(81,43,184,0),#512bb8 77.87%); 
+    bottom: 0; 
+    content: ""; 
+    height: 352px; 
+    position: absolute; 
+    width: 100%; 
+    z-index: 507;
+} 
+
+.wrapper .card[data-v-1de1fe54]::after { 
+    background: linear-gradient(180deg,#512bb800,#512bb8 77.87%); 
+    bottom: 0; 
+    content: ""; 
+    height: 352px; 
+    position: absolute; 
+    width: 100%; 
+    z-index: 507;
+} 
+
+.headline[data-v-c746ae59] { 
+    --title-font-size: 26px; 
+    --subtitle-font-size: 44px; 
+    --flag-size: 37px; 
+    align-items: center; 
+    background: #fff3; 
+    border-radius: 19px; 
+    color: #fff; 
+    display: flex; 
+    flex-wrap: wrap; 
+    font-family: Montserrat,sans-serif; 
+    font-size: 26.829px; 
+    font-weight: 800; 
+    gap: 7px; 
+    justify-content: center; 
+    letter-spacing: 1.806px; 
+    line-height: 93%; 
+    max-width: 90%; 
+    padding: 17px 20px; 
+    text-transform: uppercase;
+} 
+
+.headline-wrapper[data-v-1de1fe54]  { 
+    margin-bottom: 255px; 
+    z-index: 506;
+} 
+
+.wrapper .card .headline-wrapper[data-v-1de1fe54]::before { 
+    background-image: url(https://hookupguru.com/banner-photo-2.png); 
+    content: ""; 
+    height: 355px; 
+    left: 90px; 
+    position: absolute; 
+    top: 247px; 
+    transform: rotate(-12deg); 
+    width: 304px; 
+    z-index: 503;
+} 
+
+.wrapper .card .headline-wrapper[data-v-1de1fe54]::after { 
+    background-image: url(https://hookupguru.com/banner-photo-1.png); 
+    content: ""; 
+    height: 396px; 
+    position: absolute; 
+    right: 85px; 
+    top: 210px; 
+    transform: rotate(12deg); 
+    width: 338px; 
+    z-index: 502;
+} 
+
+.emoji[data-v-1de1fe54]  { 
+    z-index: 503;
+} 
+
+.wrapper .card .emoji[data-v-1de1fe54]::before { 
+    bottom: 212px; 
+    content: "👅"; 
+    font-size: 73px; 
+    line-height: 73px; 
+    position: absolute; 
+    right: -4px; 
+    transform: rotate(24deg); 
+    z-index: 501;
+} 
+
+.wrapper .card .emoji[data-v-1de1fe54]::after { 
+    content: "🍓"; 
+    font-size: 124px; 
+    left: 5px; 
+    line-height: 124px; 
+    position: absolute; 
+    top: 184px; 
+    transform: scaleX(-1) rotate(74deg); 
+    z-index: 501;
+} 
+
+.description[data-v-1de1fe54]  { 
+    color: #fff; 
+    font-size: 24px; 
+    font-weight: 600; 
+    letter-spacing: 2px; 
+    line-height: 110%; 
+    max-width: 85%; 
+    text-align: center;
+} 
+
+.description[data-v-1de1fe54]  { 
+    font-family: Montserrat,sans-serif; 
+    font-style: normal; 
+    z-index: 508;
+} 
+
+.btn_pink { 
+    background-color: #fe3367; 
+    border-radius: 60px; 
+    box-shadow: 0 3px 10px 0 rgba(254,51,103,.5); 
+    color: #fff; 
+    cursor: pointer; 
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    font-family: Montserrat,sans-serif; 
+    font-size: 12px; 
+    font-stretch: normal; 
+    font-style: normal; 
+    font-weight: 700; 
+    height: 42px; 
+    letter-spacing: 1px; 
+    line-height: 42px; 
+    text-align: center; 
+    text-decoration: none; 
+    text-transform: uppercase; 
+    width: 160px;
+} 
+
+.btn_pink { 
+    background-color: #fe3367; 
+    border-radius: 60px; 
+    box-shadow: 0 3px 10px #fe336780; 
+    color: #fff; 
+    cursor: pointer; 
+    display: block; 
+    font-family: Montserrat,sans-serif; 
+    font-size: 12px; 
+    font-stretch: normal; 
+    font-style: normal; 
+    font-weight: 700; 
+    height: 42px; 
+    letter-spacing: 1px; 
+    line-height: 42px; 
+    text-align: center; 
+    text-decoration: none; 
+    text-transform: uppercase; 
+    width: 160px;
+} 
+
+.btn_pink.center { 
+    margin: auto;
+} 
+
+.btn_pink[data-v-1de1fe54]  { 
+    font-family: Montserrat,sans-serif; 
+    font-style: normal; 
+    z-index: 508;
+    display: flex;
+} 
+
+.btn_pink[data-v-1de1fe54]  { 
+    font-size: 30px; 
+    font-weight: 700; 
+    height: 73px; 
+    letter-spacing: 1px; 
+    line-height: 140%; 
+    max-width: 360px; 
+    text-transform: capitalize; 
+    width: 100%;
+} 
+
+.btn_pink:hover { 
+    background-color: #ff1652; 
+    color: #fff;
+} 
+
+.header[data-v-1de1fe54]  { 
+    align-items: center; 
+    display: flex; 
+    justify-content: center; 
+    margin-bottom: 16px; 
+    width: 100%; 
+    z-index: 507;
+} 
+
+.wrapper .card .header[data-v-1de1fe54]::after { 
+    bottom: 129px; 
+    content: "💦"; 
+    font-size: 74px; 
+    left: 25px; 
+    line-height: 100%; 
+    position: absolute; 
+    transform: scaleX(-1) rotate(56deg); 
+    z-index: 503;
+} 
+
+.header .close[data-v-1de1fe54]  { 
+    align-items: center; 
+    background: #fff; 
+    border-radius: 200px; 
+    cursor: pointer; 
+    display: flex; 
+    justify-self: center; 
+    margin-left: auto; 
+    opacity: .4; 
+    padding: 10px; 
+    position: absolute; 
+    right: 16px; 
+    top: 18px;
+} 
+
+.headline .title[data-v-c746ae59]  { 
+    display: flex; 
+    font-size: var(--title-font-size); 
+    line-height: 100%;
+} 
+
+.headline .subtitle[data-v-c746ae59]  { 
+    display: flex; 
+    font-size: var(--subtitle-font-size); 
+    letter-spacing: 2.941px; 
+    line-height: 100%; 
+    order: 1;
+} 
+
+.headline .flag[data-v-c746ae59]  { 
+    font-size: var(--flag-size); 
+    order: 0;
+} 
+
+p { 
+    margin-bottom: 15px;
+} 
+
+.header .close .cross[data-v-1de1fe54]  { 
+    background: url(./images/close.svg) 50% no-repeat; 
+    background-size: contain; 
+    height: 14px; 
+    width: 14px;
+} 
+
+
+.wrapper[data-v-1de1fe54], .wrapper .card[data-v-1de1fe54] {
+    align-items: center;
+    display: flex
+}
+.wrapper[data-v-1de1fe54] {
+    background-color: #333333b3;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 500;
+}
+.wrapper .card[data-v-1de1fe54] {
+    background: #bf5ea2;
+    flex-direction: column;
+    max-width: 700px;
+    overflow: hidden;
+    padding: 18px 16px 37px;
+    position: relative;
+    width: 100%;
+}
+.wrapper .card .header[data-v-1de1fe54] {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+    width: 100%;
+    z-index: 507;
+}
+.wrapper .card .header .logo[data-v-1de1fe54] {
+    background-size: contain;
+    height: 36px;
+    width: 195px;
+}
+.wrapper .card .header .logo[data-v-1de1fe54] {
+    background: url(./images/logoFullWhite.svg) 50% no-repeat;
+    background-size: contain;
+    height: 36px;
+    width: 195px;
+}

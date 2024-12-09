@@ -29,3 +29,48 @@ function save_cam_tag_meta_box($post_id) {
 
 add_action('add_meta_boxes', 'add_cam_tag_meta_box');
 add_action('save_post', 'save_cam_tag_meta_box');
+
+
+function custom_popup_shortcode() {
+    ob_start();
+    ?>
+    <div id="__nuxt">
+        <div>
+            <div data-v-1de1fe54="" class="wrapper">
+                <div data-v-1de1fe54="" class="card">
+                    <div data-v-1de1fe54="" class="header">
+                        <div data-v-1de1fe54="" class="logo"></div>
+                        <div data-v-1de1fe54="" class="close">
+                            <div data-v-1de1fe54="" class="cross"></div>
+                        </div>
+                    </div>
+                    <div data-v-c746ae59="" data-v-1de1fe54="" class="headline headline-wrapper">
+                        <div data-v-c746ae59="" class="title">Best Worldwide</div>
+                        <div data-v-c746ae59="" class="subtitle">Hookup Site!</div>
+                        <div data-v-c746ae59="" class="flag">🌎</div>
+                    </div>
+                    <div data-v-1de1fe54="" class="emoji"></div>
+                    <div data-v-1de1fe54="" class="description">
+                        <p>Try <strong>Ashley Madison</strong> today!🔥</p>
+                    </div>
+                    <div data-v-1de1fe54="" class="photos"></div>
+                    <a href="/redirect" target="_blank" data-v-1de1fe54="" class="btn_pink center">Find Match</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('custom_popup', 'custom_popup_shortcode');
+
+function custom_popup_styles() {
+    wp_enqueue_style('custom-popup-style', get_stylesheet_directory_uri() . '/snipped.css');
+}
+add_action('wp_enqueue_scripts', 'custom_popup_styles');
+
+
+function custom_popup_scripts() {
+    wp_enqueue_script('custom-popup-script', get_stylesheet_directory_uri() . '/js/popup.js', array('jquery'), null, true);
+}
+add_action('wp_enqueue_scripts', 'custom_popup_scripts');
