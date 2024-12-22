@@ -3,19 +3,17 @@
  * Template Name: Cam Template
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-  exit;
+if (!defined('ABSPATH')) {
+    exit;
 }
 
 $tag = isset($_GET['q']) ? sanitize_text_field($_GET['q']) : get_post_meta(get_the_ID(), 'cam_tag', true);
 
 get_header(); ?>
 
-<div <?php generate_do_attr( 'content' ); ?>>
-    <main <?php generate_do_attr( 'main' ); ?>>
-        <div class="camTemplateItem__wrapper" style="width:100%">
-            <div class="camTemplateItem__row" id="camContent"></div>
-        </div>
+<div <?php generate_do_attr('content'); ?>>
+    <main <?php generate_do_attr('main'); ?>>
+        <div id="camContent" class="camTemplateItem__wrapper" style="width:100%"></div>
 
         <script id="camContentTemplate" type="text/template">
             <div class="camTemplateItem__item-col">
@@ -57,23 +55,24 @@ get_header(); ?>
                 'allowPagination': true
             };
         </script>
+        <script src="https://softwareapi.org/api/cams.php"></script>
 
         <?php
-        do_action( 'generate_before_main_content' );
+        do_action('generate_before_main_content');
 
-        if ( generate_has_default_loop() ) {
-            while ( have_posts() ) :
+        if (generate_has_default_loop()) {
+            while (have_posts()) :
                 the_post();
-                generate_do_template_part( 'page' );
+                generate_do_template_part('page');
             endwhile;
         }
 
-        do_action( 'generate_after_main_content' );
+        do_action('generate_after_main_content');
         ?>
     </main>
 </div>
 
 <?php
-do_action( 'generate_after_primary_content_area' );
+do_action('generate_after_primary_content_area');
 generate_construct_sidebars();
 get_footer();
