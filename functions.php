@@ -198,3 +198,91 @@ function fetch_cams_data_by_tag($tag) {
 
     return false;
 }
+
+/* Profile shortcode */
+function profile_card_shortcode($atts, $content = null) {
+    $atts = shortcode_atts(
+        array(
+            'username' => '',
+            'name' => '',
+            'postcount' => '',
+            'photoscount' => '',
+            'videoscount' => '',
+            'joindate' => '',
+            'location' => '',
+            'subprice' => '',
+            'layout' => 'default',
+        ),
+        $atts,
+        'profile_card'
+    );
+
+    $bio = $content ? wp_kses_post(str_replace(array("\n", "\r"), '', $content)) : '';
+    $price = strtolower(trim($atts['subprice'])) === 'free' ? 'free' : '$' . esc_html($atts['subprice']);
+    $username = esc_attr($atts['username']);
+    $name = esc_html($atts['name']);
+
+    ob_start();
+    
+    if ($atts['layout'] === 'horizontal') {
+        ?>
+        <div class="profile-card profile-card-horizontal">
+            <img src="https://profile-grabber.b-cdn.net/profiles/<?php echo $username; ?>-avatar.jpg" alt="Profile Image">
+            <div class="content">
+                <h2><?php echo $name; ?></h2>
+                <p class="username">@<?php echo $username; ?></p>
+                <p><?php echo esc_html($atts['postcount']); ?> posts, <?php echo esc_html($atts['videoscount']); ?> videos, <?php echo esc_html($atts['photoscount']); ?> photos.</p>
+                <p>Join Date: <?php echo esc_html($atts['joindate']); ?></p>
+                <a href="https://onlyfans.com/<?php echo $username; ?>" class="button">Open OnlyFans</a>
+            </div>
+        </div>
+        <?php
+    } elseif ($atts['layout'] === 'tile') {
+        ?>
+        <div class="profile-card profile-card-tile">
+            <a href="https://onlyfans.com/<?php echo $username; ?>">
+                <img src="https://profile-grabber.b-cdn.net/profiles/<?php echo $username; ?>-avatar.jpg" alt="Profile Image">
+            </a>
+        </div>
+        <?php
+    } else {
+        ?>
+        <div class="profile-card">
+            <div class="ribbon"><?php echo $price; ?></div>
+            <img src="https://profile-grabber.b-cdn.net/profiles/<?php echo $username; ?>-avatar.jpg?width=475&height=400" alt="Profile Image">
+            <div class="content">
+                <h2><?php echo $name; ?></h2>
+                <p class="username">@<?php echo $username; ?></p>
+                <p><?php echo esc_html($atts['postcount']); ?> posts, <?php echo esc_html($atts['videoscount']); ?> videos, <?php echo esc_html($atts['photoscount']); ?> photos.</p>
+                <p>Join Date: <?php echo esc_html($atts['joindate']); ?></p>
+                <p class="bio-<?php echo esc_attr($atts['username']); ?>"><?php echo wp_trim_words($bio, 20, '...'); ?> <span id="more-button" class="show-more-<?php echo esc_attr($atts['username']); ?>">Read Bio</span></p>
+                <a href="https://onlyfans.com/<?php echo esc_attr($atts['username']); ?>" class="button">Open OnlyFans</a>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const showMore = document.querySelector('.show-more-<?php echo esc_js($atts['username']); ?>');
+                const bio = document.querySelector('.bio-<?php echo esc_js($atts['username']); ?>');
+                const fullBio = <?php echo wp_json_encode($bio); ?>;
+
+                if (showMore) {
+                    showMore.addEventListener('click', function() {
+                        bio.innerHTML = fullBio;
+                        showMore.style.display = 'none';
+                    });
+                }
+            });
+        </script>
+        <?php
+    }
+    
+    return ob_get_clean();
+}
+add_shortcode('profile_card', 'profile_card_shortcode');
+
+function enqueue_profile_card_css() {
+    if (!wp_style_is('profile-card-css', 'enqueued')) {
+        wp_enqueue_style('profile-card-css', get_stylesheet_directory_uri() . '/css/profile_card.css', [], '1.1.0');
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_profile_card_css');
