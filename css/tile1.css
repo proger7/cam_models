@@ -1894,3 +1894,43 @@ p {
     font-size: 1rem;
     color: #444;
 }
+
+
+/* Mobile and tablet  */
+.row-cols-md-3 > * {
+    min-width: 381px;
+}
+
+@media (max-width: 1024px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .row-cols-xl-5 > * {
+        width: 33.33%;
+    }
+
+    .row-cols-lg-4 > * {
+        width: 50%;
+    }
+
+    .row-cols-md-3 > * {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .row-cols-xl-5 > *,
+    .row-cols-lg-4 > *,
+    .row-cols-md-3 > *,
+    .row-cols-sm-2 > * {
+        width: 100%;
+    }
+}
+
