@@ -223,6 +223,9 @@ function profile_card_shortcode($atts, $content = null) {
     $name = esc_html($atts['name']);
 
     ob_start();
+
+    enqueue_profile_card_css($atts['layout']);
+    enqueue_fontawesome();
     
     if ($atts['layout'] === 'horizontal') {
         ?>
@@ -237,13 +240,48 @@ function profile_card_shortcode($atts, $content = null) {
             </div>
         </div>
         <?php
-    } elseif ($atts['layout'] === 'tile') {
+    } elseif ($atts['layout'] === 'tile1') {
         ?>
-        <div class="profile-card profile-card-tile">
-            <a href="https://onlyfans.com/<?php echo $username; ?>">
-                <img src="https://profile-grabber.b-cdn.net/profiles/<?php echo $username; ?>-avatar.jpg" alt="Profile Image">
-            </a>
+
+        <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-0 snipcss0-1-1-4">
+            <div class="col p-0 snipcss0-2-4-5" itemtype="https://schema.org/WPAdBlock">
+                <a href="https://onlyfans.com/<?php echo esc_attr($username); ?>" class="text-decoration-none model-card-link snipcss0-3-5-6" target="_blank" rel="sponsored nofollow noreferrer noopener">
+                    <div class="card h-100 shadow-sm hover-effect snipcss0-4-6-7 style-AdCkM" id="style-AdCkM">
+                        <div class="snipcss0-5-7-8 style-iZFqQ" id="style-iZFqQ">
+                            <img src="https://profile-grabber.b-cdn.net/profiles/<?php echo esc_attr($username); ?>-avatar.jpg" alt="<?php echo esc_attr($name); ?>" loading="lazy" class="snipcss0-6-8-9 style-klXDW" id="style-klXDW">
+                            <div class="snipcss0-6-8-10 style-ldvMU" id="style-ldvMU">
+                                <div class="snipcss0-7-10-11 style-UQIrp" id="style-UQIrp">
+                                    <div class="snipcss0-8-11-12 style-nqdTO" id="style-nqdTO">
+                                        <div class="snipcss0-9-12-13 style-XkFDK" id="style-XkFDK">
+                                            <span class="card-title mb-0 d-block snipcss0-10-13-14 style-vtVWq" itemprop="name" id="style-vtVWq"> <?php echo esc_html($name); ?> </span>
+                                            <div class="d-flex align-items-center mt-0 snipcss0-10-13-15 style-ljJqJ" id="style-ljJqJ">
+                                                <span class="text-white-50 me-2 snipcss0-11-15-16 style-Xtohi" id="style-Xtohi">@<?php echo esc_html($username); ?></span>
+                                            </div>
+                                        </div>
+                                        <div class="snipcss0-9-12-17 style-zgFtb" id="style-zgFtb">
+                                            <span class="badge bg-light text-dark snipcss0-10-17-18"><?php echo !empty($price) ? esc_html($price) : 'Ad'; ?></span>
+                                            <div class="mt-0 snipcss0-10-17-19 style-JA2kD" id="style-JA2kD">
+                                                <span class="text-white-50 snipcss0-11-19-20">
+                                                    <i class="fas fa-heart me-1 snipcss0-12-20-21"></i><?php echo number_format(rand(1000, 50000)); ?> </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="snipcss0-7-10-22 style-XjQrH" id="style-XjQrH">
+                                    <div class="mt-2 description-container snipcss0-8-22-23">
+                                        <p class="card-text small text-white mb-0 description-text snipcss0-9-23-24" itemprop="text">
+                                            <span class="description-short snipcss0-10-24-25"><?php echo esc_html(wp_trim_words($bio, 12, '...')); ?></span>
+                                            <span class="description-full snipcss0-10-24-26 style-GlXSA" id="style-GlXSA"> <?php echo esc_html(wp_trim_words($bio, 20, '...')); ?> </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
+
         <?php
     } else {
         ?>
@@ -280,9 +318,18 @@ function profile_card_shortcode($atts, $content = null) {
 }
 add_shortcode('profile_card', 'profile_card_shortcode');
 
-function enqueue_profile_card_css() {
-    if (!wp_style_is('profile-card-css', 'enqueued')) {
-        wp_enqueue_style('profile-card-css', get_stylesheet_directory_uri() . '/css/profile_card.css', [], '1.1.0');
+
+function enqueue_profile_card_css($style) {
+    $css_file = get_stylesheet_directory_uri() . '/css/' . sanitize_file_name($style) . '.css';
+    if (!wp_style_is('profile-card-css-' . $style, 'enqueued')) {
+        wp_enqueue_style('profile-card-css-' . $style, $css_file, [], '1.1.0');
     }
 }
+
 add_action('wp_enqueue_scripts', 'enqueue_profile_card_css');
+
+
+function enqueue_fontawesome() {
+    wp_enqueue_style('font-awesome-cdn', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css', array(), '6.0.0');
+}
+add_action('wp_enqueue_scripts', 'enqueue_fontawesome');
