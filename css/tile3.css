@@ -1,0 +1,175 @@
+.modelList-wrapper { 
+    padding-bottom: 1rem; 
+    width: 100%; 
+    display: flex;  
+    justify-content: center;
+}
+
+.modelCard-wrapper { 
+    width: 100%; 
+    max-width: 350px; 
+    min-width: 350px;
+} 
+
+.modelCard-wrapper  { 
+    min-width: unset;
+} 
+
+.modelCard-wrapper .modelCard-box  { 
+    position: relative; 
+    display: -webkit-box; 
+    display: -ms-flexbox; 
+    display: flex; 
+    width: 100%; 
+    height: 350px; 
+    border: 4px solid white; 
+    border-radius: 20px; 
+    overflow: hidden; 
+    -webkit-transition: .2s; 
+    transition: .2s; 
+    -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.25); 
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.25);
+} 
+
+.modelCard-wrapper .modelCard-box:hover { 
+    -webkit-box-shadow: 0px 0px 15px rgba(0,0,0,0.3); 
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
+} 
+
+.modelCard-wrapper .modelCard-box .modelCard-image  { 
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    left: 0px; 
+    top: 0px; 
+    z-index: 1;
+} 
+
+.modelCard-wrapper .modelCard-box .modelCard-profileTag  { 
+    position: absolute; 
+    right: 10px; 
+    top: 10px; 
+    height: 30px; 
+    padding: 0px 15px; 
+    background-color: #0bf; 
+    color: #fff; 
+    display: -webkit-box; 
+    display: -ms-flexbox; 
+    display: flex; 
+    -webkit-box-align: center; 
+    -ms-flex-align: center; 
+    align-items: center; 
+    border-radius: 5rem; 
+    line-height: 1; 
+    font-weight: 700; 
+    font-size: 14px; 
+    gap: .5rem; 
+    z-index: 1;
+} 
+
+.modelCard-wrapper .modelCard-box .modelCard-info  { 
+    pointer-events: none; 
+    position: absolute; 
+    bottom: 0px; 
+    left: 0px; 
+    width: 100%; 
+    height: 100px; 
+    background: -webkit-gradient(linear,left top,left bottom,from(rgba(19,66,118,0)),to(#134276)); 
+    background: linear-gradient(180deg,rgba(19,66,118,0) 0%,#134276 100%); 
+    display: -webkit-box; 
+    display: -ms-flexbox; 
+    display: flex; 
+    -webkit-box-orient: vertical; 
+    -webkit-box-direction: normal; 
+    -ms-flex-direction: column; 
+    flex-direction: column; 
+    -webkit-box-pack: end; 
+    -ms-flex-pack: end; 
+    justify-content: flex-end; 
+    gap: 5px; 
+    padding: 10px 70px 10px 10px; 
+    z-index: 1;
+} 
+
+.modelCard-wrapper .modelCard-box .modelCard-image img  { 
+    -o-object-fit: cover; 
+    object-fit: cover; 
+    height: 100%; 
+    width: 100%;
+} 
+
+.icon { 
+    font-family: 'hubite-icon'!important; 
+    speak: never; 
+    font-style: normal; 
+    font-weight: normal; 
+    font-variant: normal; 
+    text-transform: none; 
+    line-height: 1; 
+    pointer-events: none; 
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale;
+} 
+
+.modelCard-wrapper .modelCard-box .modelCard-info_username  { 
+    color: white;
+} 
+
+.modelCard-wrapper .modelCard-box .modelCard-info_nickname  { 
+    color: white; 
+    font-weight: 700; 
+    font-size: 16px; 
+    margin-bottom: 0;
+} 
+
+.modelCard-wrapper .modelCard-box .modelCard-info_media  { 
+    display: -webkit-box; 
+    display: -ms-flexbox; 
+    display: flex; 
+    margin-top: 5px; 
+    gap: 15px;
+} 
+
+.modelCard-wrapper .modelCard-box .modelCard-info_price  { 
+    position: absolute; 
+    left: 0px; 
+    bottom: calc(100% + 20.2rem); 
+    background-color: #134276; 
+    color: white; 
+    padding: 0rem 2rem; 
+    height: 3rem; 
+    display: -webkit-box; 
+    display: -ms-flexbox; 
+    display: flex; 
+    gap: .5rem; 
+    -webkit-box-align: center; 
+    -ms-flex-align: center; 
+    align-items: center; 
+    -webkit-box-pack: center; 
+    -ms-flex-pack: center; 
+    justify-content: center; 
+    border-radius: 0px 5rem 5rem 0px; 
+    font-weight: bold; 
+    font-size: 16px; 
+    z-index: 0;
+} 
+
+.modelCard-wrapper .modelCard-box .modelCard-info_media .media-item  { 
+    display: -webkit-box; 
+    display: -ms-flexbox; 
+    display: flex; 
+    -webkit-box-align: center; 
+    -ms-flex-align: center; 
+    align-items: center; 
+    gap: .5rem;
+} 
+
+.modelCard-wrapper .modelCard-box .modelCard-info_media .media-item img  { 
+    width: 17px; 
+    height: 16px; 
+    margin-right: 5px;
+} 
+
+.modelCard-wrapper .modelCard-box .modelCard-info_media .media-item span  { 
+    color: white;
+}

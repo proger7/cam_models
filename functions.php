@@ -221,6 +221,7 @@ function profile_card_shortcode($atts, $content = null) {
     $price = strtolower(trim($atts['subprice'])) === 'free' ? 'free' : '$' . esc_html($atts['subprice']);
     $username = esc_attr($atts['username']);
     $name = esc_html($atts['name']);
+    $theme_dir = get_stylesheet_directory_uri();
 
     ob_start();
 
@@ -340,7 +341,42 @@ function profile_card_shortcode($atts, $content = null) {
                 </div>
             </div>
         </div>
-
+        <?php
+    } elseif ($atts['layout'] === 'tile3') {
+        ?>
+        <div class="modelList-wrapper">
+            <div class="modelCard-wrapper" data-username="<?php echo esc_attr($username); ?>">
+                <div class="modelCard-box">
+                    <a class="modelCard-image" href="<?php echo esc_url($profile_url); ?>">
+                        <img loading="lazy" src="https://profile-grabber.b-cdn.net/profiles/<?php echo esc_attr($username); ?>-avatar.jpg" alt="OnlyFans of <?php echo esc_attr($name); ?>">
+                    </a>
+                    <a href="<?php echo esc_url($profile_url); ?>" class="modelCard-profileTag">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 13c-3.03 0-5.5-2.47-5.5-5.5S8.97 6.5 12 6.5s5.5 2.47 5.5 5.5-2.47 5.5-5.5 5.5zm0-9c-1.93 0-3.5 1.57-3.5 3.5S10.07 16.5 12 16.5s3.5-1.57 3.5-3.5S13.93 8.5 12 8.5zm0 6c-1.38 0-2.5-1.12-2.5-2.5S10.62 9.5 12 9.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>Profile
+                    </a>
+                    <div class="modelCard-info">
+                        <span class="modelCard-info_username"> @<?php echo esc_html($username); ?> </span>
+                        <p class="modelCard-info_nickname"> <?php echo esc_html($name); ?> </p>
+                        <div class="modelCard-info_media">
+                            <div class="media-item">
+                                <img src="<?php echo esc_url($theme_dir . '/images/icon-paper.svg'); ?>" alt="icon paper">
+                                <span><?php echo esc_html($atts['postcount']); ?></span>
+                            </div>
+                            <div class="media-item">
+                                <img src="<?php echo esc_url($theme_dir . '/images/icon-camera.svg'); ?>" alt="icon camera">
+                                <span><?php echo esc_html($atts['photoscount']); ?></span>
+                            </div>
+                            <div class="media-item">
+                                <img src="<?php echo esc_url($theme_dir . '/images/icon-video.svg'); ?>" alt="icon video">
+                                <span><?php echo esc_html($atts['videoscount']); ?></span>
+                            </div>
+                        </div>
+                        <span class="modelCard-info_price"> <?php echo esc_html($price); ?> </span>
+                    </div>
+                </div>
+            </div>
+        </div>
         <?php
     } else {
         ?>
