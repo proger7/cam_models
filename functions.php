@@ -267,14 +267,7 @@ function profile_card_shortcode($atts, $content = null) {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="snipcss0-7-10-22 style-XjQrH" id="style-XjQrH">
-                                    <div class="mt-2 description-container snipcss0-8-22-23">
-                                        <p class="card-text small text-white mb-0 description-text snipcss0-9-23-24" itemprop="text">
-                                            <span class="description-short snipcss0-10-24-25"><?php echo esc_html(wp_trim_words($bio, 12, '...')); ?></span>
-                                            <span class="description-full snipcss0-10-24-26 style-GlXSA" id="style-GlXSA"> <?php echo esc_html(wp_trim_words($bio, 20, '...')); ?> </span>
-                                        </p>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -301,7 +294,7 @@ function profile_card_shortcode($atts, $content = null) {
                         </h5>
                         <h5 class="creator-name"> <?php echo $name; ?> </h5>
                     </a>
-                    <div class="creator-bio"> <?php echo esc_html(wp_trim_words($bio, 20, '...')); ?> </div>
+
                     <div class="creator-stats">
                         <?php if (!empty($atts['subprice'])) : ?>
                             <div class="creator-stat">
@@ -359,7 +352,6 @@ function profile_card_shortcode($atts, $content = null) {
                 <p class="username">@<?php echo $username; ?></p>
                 <p><?php echo esc_html($atts['postcount']); ?> posts, <?php echo esc_html($atts['videoscount']); ?> videos, <?php echo esc_html($atts['photoscount']); ?> photos.</p>
                 <p>Join Date: <?php echo esc_html($atts['joindate']); ?></p>
-                <p class="bio-<?php echo esc_attr($atts['username']); ?>"><?php echo wp_trim_words($bio, 20, '...'); ?> <span id="more-button" class="show-more-<?php echo esc_attr($atts['username']); ?>">Read Bio</span></p>
                 <a href="https://onlyfans.com/<?php echo esc_attr($atts['username']); ?>" class="button">Open OnlyFans</a>
             </div>
         </div>
