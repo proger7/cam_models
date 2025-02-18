@@ -130,29 +130,32 @@
     gap: 15px;
 } 
 
-.modelCard-wrapper .modelCard-box .modelCard-info_price  { 
-    position: absolute; 
-    left: 0px; 
-    bottom: calc(100% + 20.2rem); 
-    background-color: #134276; 
-    color: white; 
-    padding: 0rem 2rem; 
-    height: 3rem; 
-    display: -webkit-box; 
-    display: -ms-flexbox; 
-    display: flex; 
-    gap: .5rem; 
-    -webkit-box-align: center; 
-    -ms-flex-align: center; 
-    align-items: center; 
-    -webkit-box-pack: center; 
-    -ms-flex-pack: center; 
-    justify-content: center; 
-    border-radius: 0px 5rem 5rem 0px; 
-    font-weight: bold; 
-    font-size: 16px; 
-    z-index: 0;
-} 
+@media (min-width: 1025px) {
+    .modelCard-wrapper .modelCard-box .modelCard-info_price  { 
+        position: absolute; 
+        left: 0px; 
+        bottom: 264%; 
+        background-color: #134276; 
+        color: white; 
+        padding: 0rem 2rem; 
+        height: 3rem; 
+        display: -webkit-box; 
+        display: -ms-flexbox; 
+        display: flex; 
+        gap: .5rem; 
+        -webkit-box-align: center; 
+        -ms-flex-align: center; 
+        align-items: center; 
+        -webkit-box-pack: center; 
+        -ms-flex-pack: center; 
+        justify-content: center; 
+        border-radius: 0px 5rem 5rem 0px; 
+        font-weight: bold; 
+        font-size: 16px; 
+        z-index: 0;
+    } 
+}
+
 
 .modelCard-wrapper .modelCard-box .modelCard-info_media .media-item  { 
     display: -webkit-box; 
@@ -265,7 +268,6 @@
 .modelCard-wrapper .modelCard-box .modelCard-info_price  { 
     position: absolute; 
     left: 0px; 
-    top: 10px; 
     background-color: #134276; 
     color: white; 
     padding: 0.5rem 1rem; 
@@ -305,3 +307,4 @@
         justify-content: center;
     }
 }
+
