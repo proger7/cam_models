@@ -275,6 +275,7 @@ function profile_card_shortcode($atts, $content = null) {
                 </a>
             </div>
         </div>
+
         <?php
     } elseif ($atts['layout'] === 'tile2') {
         ?>
@@ -377,6 +378,64 @@ function profile_card_shortcode($atts, $content = null) {
                 </div>
             </div>
         </div>
+        <?php
+    } elseif ($atts['layout'] === 'grid_tile1') {
+        $profiles = include 'profiles-data.php';
+        ?>
+
+<div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-0">
+    <?php foreach ($profiles['profiles'] as $profile): ?>
+        <div class="col p-0 snipcss0-2-4-5" itemtype="https://schema.org/WPAdBlock">
+            <a href="<?php echo esc_url($profile['profile_link']); ?>" class="text-decoration-none model-card-link snipcss0-3-5-6" target="_blank" rel="sponsored nofollow noreferrer noopener">
+                <div class="card h-100 shadow-sm hover-effect snipcss0-4-6-7 style-AdCkM" id="style-AdCkM">
+                    <div class="snipcss0-5-7-8 style-iZFqQ" id="style-iZFqQ">
+                        <img src="<?php echo esc_url($profile['avatar_path']); ?>" 
+                             alt="<?php echo esc_attr($profile['name']); ?>" 
+                             loading="lazy" 
+                             class="snipcss0-6-8-9 style-klXDW" id="style-klXDW">
+                        <div class="snipcss0-6-8-10 style-ldvMU" id="style-ldvMU">
+                            <div class="snipcss0-7-10-11 style-UQIrp" id="style-UQIrp">
+                                <div class="snipcss0-8-11-12 style-nqdTO" id="style-nqdTO">
+                                    <div class="snipcss0-9-12-13 style-XkFDK" id="style-XkFDK">
+                                        <span class="card-title mb-0 d-block snipcss0-10-13-14 style-vtVWq" itemprop="name" id="style-vtVWq"> 
+                                            <?php echo esc_html($profile['name']); ?> 
+                                        </span>
+                                        <div class="d-flex align-items-center mt-0 snipcss0-10-13-15 style-ljJqJ" id="style-ljJqJ">
+                                            <span class="text-white-50 me-2 snipcss0-11-15-16 style-Xtohi" id="style-Xtohi">
+                                                <?php echo esc_html($profile['username']); ?>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="snipcss0-9-12-17 style-zgFtb" id="style-zgFtb">
+                                        <span class="badge bg-light text-dark snipcss0-10-17-18">
+                                            <?php echo !empty($profile['subscription_price']) ? '$' . esc_html($profile['subscription_price']) : 'Ad'; ?>
+                                        </span>
+                                        <div class="mt-0 snipcss0-10-17-19 style-JA2kD" id="style-JA2kD">
+                                            <span class="text-white-50 snipcss0-11-19-20">
+                                                <i class="fas fa-heart me-1 snipcss0-12-20-21"></i>
+                                                <?php echo esc_html($profile['followers']); ?> 
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="snipcss0-7-10-22 style-XjQrH" id="style-XjQrH">
+                                <div class="mt-2 description-container snipcss0-8-22-23">
+                                    <p class="card-text small text-white mb-0 description-text snipcss0-9-23-24" itemprop="text">
+                                        <span class="description-short snipcss0-10-24-25">
+                                            <?php echo esc_html($profile['description']); ?>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    <?php endforeach; ?>
+</div>
+
         <?php
     } else {
         ?>
