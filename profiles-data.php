@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'profiles' => [
+    'profiles1' => [
         "baby-riley" => [
             "name" => "Baby Riley",
             "username" => "@baby_riley",
