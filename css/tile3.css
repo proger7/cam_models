@@ -307,3 +307,16 @@
         justify-content: center;
     }
 }
+
+.grid-tile3 {
+    padding-bottom: 1rem;
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(320px, 350px)) [3];
+    grid-template-columns: repeat(3, minmax(320px, 350px));
+    gap: 40px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}

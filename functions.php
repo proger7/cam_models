@@ -507,9 +507,9 @@ function profile_card_shortcode($atts, $content = null) {
         $profiles = include 'profiles-data.php';
         ?>
 
-        <div class="modelList-wrapper">
+        <div class="modelList-wrapper grid-tile3">
             <?php foreach ($profiles['profiles1'] as $profile): ?>
-                <div class="modelCard-wrapper" data-username="<?php echo esc_attr($profile['username']); ?>">
+                <div class="modelCard-wrapper " data-username="<?php echo esc_attr($profile['username']); ?>">
                     <div class="modelCard-box">
                         <a class="modelCard-image" href="<?php echo esc_url($profile['profile_link']); ?>">
                             <img loading="lazy" src="<?php echo esc_url($profile['avatar_path']); ?>" alt="OnlyFans of <?php echo esc_attr($profile['name']); ?>">
@@ -520,19 +520,19 @@ function profile_card_shortcode($atts, $content = null) {
                             </svg>Profile
                         </a>
                         <div class="modelCard-info">
-                            <span class="modelCard-info_username"> @<?php echo esc_html($profile['username']); ?> </span>
+                            <span class="modelCard-info_username"> <?php echo esc_html($profile['username']); ?> </span>
                             <p class="modelCard-info_nickname"> <?php echo esc_html($profile['name']); ?> </p>
                             <div class="modelCard-info_media">
                                 <div class="media-item">
-                                    <img src="<?php echo esc_url(get_template_directory_uri() . '/images/icon-paper.svg'); ?>" alt="icon paper">
+                                    <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/images/icon-paper.svg'); ?>" alt="icon paper">
                                     <span><?php echo esc_html(rand(50, 500)); ?></span> 
                                 </div>
                                 <div class="media-item">
-                                    <img src="<?php echo esc_url(get_template_directory_uri() . '/images/icon-camera.svg'); ?>" alt="icon camera">
+                                    <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/images/icon-camera.svg'); ?>" alt="icon camera">
                                     <span><?php echo esc_html(rand(100, 1000)); ?></span> 
                                 </div>
                                 <div class="media-item">
-                                    <img src="<?php echo esc_url(get_template_directory_uri() . '/images/icon-video.svg'); ?>" alt="icon video">
+                                    <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/images/icon-video.svg'); ?>" alt="icon video">
                                     <span><?php echo esc_html(rand(10, 200)); ?></span> 
                                 </div>
                             </div>
