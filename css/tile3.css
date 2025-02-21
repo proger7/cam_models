@@ -320,3 +320,35 @@
     -ms-flex-pack: center;
     justify-content: center;
 }
+
+
+
+@media (max-width: 1024px) {
+    .grid-tile3 {
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-tile3 {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .modelCard-wrapper {
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+    }
+
+    .modelCard-wrapper .modelCard-box .modelCard-info {
+        padding: 10px;
+    }
+
+    .modelCard-wrapper .modelCard-box .modelCard-info_price {
+        top: 10px;
+        left: 10px;
+        padding: 0.5rem 1rem;
+    }
+}
