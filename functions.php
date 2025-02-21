@@ -143,13 +143,14 @@ function enqueue_custom_scripts_for_cam_template() {
 add_action('wp_enqueue_scripts', 'enqueue_custom_scripts_for_cam_template');
 
 function tags_widget_enqueue_scripts() {
-    wp_enqueue_script(
-        'tags-widget-script',
-        get_stylesheet_directory_uri() . '/js/tags-widget.js',
-        array('jquery'),
-        null,
-        true
-    );
+    
+    // wp_enqueue_script(
+    //     'tags-widget-script',
+    //     get_stylesheet_directory_uri() . '/js/tags-widget.js',
+    //     array('jquery'),
+    //     null,
+    //     true
+    // );
 
     wp_localize_script('tags-widget-script', 'tagsWidgetAjax', array(
         'ajaxurl' => admin_url('admin-ajax.php')
@@ -582,13 +583,16 @@ add_shortcode('profile_card', 'profile_card_shortcode');
 
 
 function enqueue_profile_card_css($style) {
-    $css_file = get_stylesheet_directory_uri() . '/css/' . sanitize_file_name($style) . '.css';
-    if (!wp_style_is('profile-card-css-' . $style, 'enqueued')) {
-        wp_enqueue_style('profile-card-css-' . $style, $css_file, [], '1.1.0');
+    $css_file_path = get_stylesheet_directory() . '/css/' . sanitize_file_name($style) . '.css';
+    $css_file_url = get_stylesheet_directory_uri() . '/css/' . sanitize_file_name($style) . '.css';
+
+    if (file_exists($css_file_path)) {
+        wp_enqueue_style('profile-card-css-' . $style, $css_file_url, [], '1.1.0');
     }
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_profile_card_css');
+
 
 
 function enqueue_fontawesome() {
