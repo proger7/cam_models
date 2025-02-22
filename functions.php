@@ -284,11 +284,11 @@ function profile_card_shortcode($atts, $content = null) {
             <div class="col-md-4">
                 <div class="creator-card-v3 ctad">
                     <div class="creator-picture">
-                        <a class="creator-picture-link" href="<?php echo $profile_url; ?>" target="_blank">
+                        <a class="creator-picture-link" href="https://onlyfans.com/<?php echo esc_attr($username); ?>" target="_blank">
                             <img alt="<?php echo $name; ?> OnlyFans picture" class="creator-img" src="https://profile-grabber.b-cdn.net/profiles/<?php echo esc_attr($username); ?>-avatar.jpg">
                         </a>
                     </div>
-                    <a class="creator-info" href="<?php echo $profile_url; ?>" target="_blank">
+                    <a class="creator-info" href="https://onlyfans.com/<?php echo esc_attr($username); ?>" target="_blank">
                         <h5 class="creator-breadcrumbs">
                             <div class="text-black mr-1">Ad</div>
                             <span class="creator-username">@<?php echo $username; ?> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="verified-icon">
@@ -349,10 +349,10 @@ function profile_card_shortcode($atts, $content = null) {
         <div class="modelList-wrapper">
             <div class="modelCard-wrapper" data-username="<?php echo esc_attr($username); ?>">
                 <div class="modelCard-box">
-                    <a class="modelCard-image" href="<?php echo esc_url($profile_url); ?>">
+                    <a class="modelCard-image" href="https://onlyfans.com/<?php echo esc_attr($username); ?>">
                         <img loading="lazy" src="https://profile-grabber.b-cdn.net/profiles/<?php echo esc_attr($username); ?>-avatar.jpg" alt="OnlyFans of <?php echo esc_attr($name); ?>">
                     </a>
-                    <a href="<?php echo esc_url($profile_url); ?>" class="modelCard-profileTag">
+                    <a href="https://onlyfans.com/<?php echo esc_attr($username); ?>" class="modelCard-profileTag">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
                           <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 13c-3.03 0-5.5-2.47-5.5-5.5S8.97 6.5 12 6.5s5.5 2.47 5.5 5.5-2.47 5.5-5.5 5.5zm0-9c-1.93 0-3.5 1.57-3.5 3.5S10.07 16.5 12 16.5s3.5-1.57 3.5-3.5S13.93 8.5 12 8.5zm0 6c-1.38 0-2.5-1.12-2.5-2.5S10.62 9.5 12 9.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                         </svg>Profile
