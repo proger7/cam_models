@@ -1865,3 +1865,12 @@ p {
     }
 }
 
+
+.profile-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.profile-grid .col {
+    padding: 0;
+}
