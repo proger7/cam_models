@@ -32,14 +32,6 @@ add_action('save_post', 'save_cam_tag_meta_box');
 
 
 
-function profile_card_grid_shortcode($atts, $content = null) {
-    $output = '<div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-0 profile-grid">';
-    $output .= do_shortcode($content);
-    $output .= '</div>';
-    return $output;
-}
-add_shortcode('profile_card_grid', 'profile_card_grid_shortcode');
-
 
 
 function custom_popup_shortcode() {
@@ -212,6 +204,30 @@ function fetch_cams_data_by_tag($tag) {
 }
 
 /* Profile shortcode */
+function profile_card_grid_shortcode($atts, $content = null) {
+    $atts = shortcode_atts(
+        array(
+            'layout' => 'tile1',
+        ),
+        $atts,
+        'profile_card_grid'
+    );
+
+    if ($atts['layout'] === 'tile1') {
+        $output = '<div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-0 profile-grid tile1">';
+    } elseif ($atts['layout'] === 'tile2') {
+        $output = '<div class="row">';
+    }
+
+    $output .= do_shortcode($content);
+    $output .= '</div>';
+
+    return $output;
+}
+add_shortcode('profile_card_grid', 'profile_card_grid_shortcode');
+
+
+
 function profile_card_shortcode($atts, $content = null) {
     $atts = shortcode_atts(
         array(
@@ -256,42 +272,42 @@ function profile_card_shortcode($atts, $content = null) {
     } elseif ($atts['layout'] === 'tile1') {
         ?>
 
-    <div class="col p-0 snipcss0-2-4-5" itemtype="https://schema.org/WPAdBlock">
-        <a href="https://onlyfans.com/<?php echo esc_attr($username); ?>" class="text-decoration-none model-card-link snipcss0-3-5-6" target="_blank" rel="sponsored nofollow noreferrer noopener">
-            <div class="card h-100 shadow-sm hover-effect snipcss0-4-6-7 style-AdCkM" id="style-AdCkM">
-                <div class="snipcss0-5-7-8 style-iZFqQ" id="style-iZFqQ">
-                    <img src="https://profile-grabber.b-cdn.net/profiles/<?php echo esc_attr($username); ?>-avatar.jpg" alt="<?php echo esc_attr($name); ?>" loading="lazy" class="snipcss0-6-8-9 style-klXDW" id="style-klXDW">
-                    <div class="snipcss0-6-8-10 style-ldvMU" id="style-ldvMU">
-                        <div class="snipcss0-7-10-11 style-UQIrp" id="style-UQIrp">
-                            <div class="snipcss0-8-11-12 style-nqdTO" id="style-nqdTO">
-                                <div class="snipcss0-9-12-13 style-XkFDK" id="style-XkFDK">
-                                    <span class="card-title mb-0 d-block snipcss0-10-13-14 style-vtVWq" itemprop="name" id="style-vtVWq">
-                                        <?php echo esc_html($name); ?>
-                                    </span>
-                                    <div class="d-flex align-items-center mt-0 snipcss0-10-13-15 style-ljJqJ" id="style-ljJqJ">
-                                        <span class="text-white-50 me-2 snipcss0-11-15-16 style-Xtohi" id="style-Xtohi">@<?php echo esc_html($username); ?></span>
-                                    </div>
-                                </div>
-                                <div class="snipcss0-9-12-17 style-zgFtb" id="style-zgFtb">
-                                    <span class="badge bg-light text-dark snipcss0-10-17-18"><?php echo !empty($price) ? esc_html($price) : 'Ad'; ?></span>
-                                    <div class="mt-0 snipcss0-10-17-19 style-JA2kD" id="style-JA2kD">
-                                        <span class="text-white-50 snipcss0-11-19-20">
-                                            <i class="fas fa-heart me-1 snipcss0-12-20-21"></i><?php echo number_format(rand(1000, 50000)); ?>
+        <div class="col p-0 snipcss0-2-4-5" itemtype="https://schema.org/WPAdBlock">
+            <a href="https://onlyfans.com/<?php echo esc_attr($username); ?>" class="text-decoration-none model-card-link snipcss0-3-5-6" target="_blank" rel="sponsored nofollow noreferrer noopener">
+                <div class="card h-100 shadow-sm hover-effect snipcss0-4-6-7 style-AdCkM" id="style-AdCkM">
+                    <div class="snipcss0-5-7-8 style-iZFqQ" id="style-iZFqQ">
+                        <img src="https://profile-grabber.b-cdn.net/profiles/<?php echo esc_attr($username); ?>-avatar.jpg" alt="<?php echo esc_attr($name); ?>" loading="lazy" class="snipcss0-6-8-9 style-klXDW" id="style-klXDW">
+                        <div class="snipcss0-6-8-10 style-ldvMU" id="style-ldvMU">
+                            <div class="snipcss0-7-10-11 style-UQIrp" id="style-UQIrp">
+                                <div class="snipcss0-8-11-12 style-nqdTO" id="style-nqdTO">
+                                    <div class="snipcss0-9-12-13 style-XkFDK" id="style-XkFDK">
+                                        <span class="card-title mb-0 d-block snipcss0-10-13-14 style-vtVWq" itemprop="name" id="style-vtVWq">
+                                            <?php echo esc_html($name); ?>
                                         </span>
+                                        <div class="d-flex align-items-center mt-0 snipcss0-10-13-15 style-ljJqJ" id="style-ljJqJ">
+                                            <span class="text-white-50 me-2 snipcss0-11-15-16 style-Xtohi" id="style-Xtohi">@<?php echo esc_html($username); ?></span>
+                                        </div>
+                                    </div>
+                                    <div class="snipcss0-9-12-17 style-zgFtb" id="style-zgFtb">
+                                        <span class="badge bg-light text-dark snipcss0-10-17-18"><?php echo !empty($price) ? esc_html($price) : 'Ad'; ?></span>
+                                        <div class="mt-0 snipcss0-10-17-19 style-JA2kD" id="style-JA2kD">
+                                            <span class="text-white-50 snipcss0-11-19-20">
+                                                <i class="fas fa-heart me-1 snipcss0-12-20-21"></i><?php echo number_format(rand(1000, 50000)); ?>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </a>
-    </div>
+            </a>
+        </div>
 
         <?php
     } elseif ($atts['layout'] === 'tile2') {
         ?>
-        <div class="row">
+
             <div class="col-md-4">
                 <div class="creator-card-v3 ctad">
                     <div class="creator-picture">
@@ -353,7 +369,7 @@ function profile_card_shortcode($atts, $content = null) {
                     </div>
                 </div>
             </div>
-        </div>
+
         <?php
     } elseif ($atts['layout'] === 'tile3') {
         ?>
