@@ -1,199 +1,21 @@
-.modelList-wrapper { 
+.grid-tile3 .modelList-wrapper { 
     padding-bottom: 1rem; 
     width: 100%; 
     display: flex;  
     justify-content: center;
 }
 
-.modelCard-wrapper { 
+.grid-tile3 .modelCard-wrapper { 
     width: 100%; 
     max-width: 350px; 
     min-width: 350px;
 } 
 
-.modelCard-wrapper  { 
+.grid-tile3 .modelCard-wrapper { 
     min-width: unset;
 } 
 
-.modelCard-wrapper .modelCard-box  { 
-    position: relative; 
-    display: -webkit-box; 
-    display: -ms-flexbox; 
-    display: flex; 
-    width: 100%; 
-    height: 350px; 
-    border: 4px solid white; 
-    border-radius: 20px; 
-    overflow: hidden; 
-    -webkit-transition: .2s; 
-    transition: .2s; 
-    -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.25); 
-    box-shadow: 0px 0px 4px rgba(0,0,0,0.25);
-} 
-
-.modelCard-wrapper .modelCard-box:hover { 
-    -webkit-box-shadow: 0px 0px 15px rgba(0,0,0,0.3); 
-    box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
-} 
-
-.modelCard-wrapper .modelCard-box .modelCard-image  { 
-    position: absolute; 
-    width: 100%; 
-    height: 100%; 
-    left: 0px; 
-    top: 0px; 
-    z-index: 1;
-} 
-
-.modelCard-wrapper .modelCard-box .modelCard-profileTag  { 
-    position: absolute; 
-    right: 10px; 
-    top: 10px; 
-    height: 30px; 
-    padding: 0px 15px; 
-    background-color: #0bf; 
-    color: #fff; 
-    display: -webkit-box; 
-    display: -ms-flexbox; 
-    display: flex; 
-    -webkit-box-align: center; 
-    -ms-flex-align: center; 
-    align-items: center; 
-    border-radius: 5rem; 
-    line-height: 1; 
-    font-weight: 700; 
-    font-size: 14px; 
-    gap: .5rem; 
-    z-index: 1;
-} 
-
-.modelCard-wrapper .modelCard-box .modelCard-info  { 
-    pointer-events: none; 
-    position: absolute; 
-    bottom: 0px; 
-    left: 0px; 
-    width: 100%; 
-    height: 100px; 
-    background: -webkit-gradient(linear,left top,left bottom,from(rgba(19,66,118,0)),to(#134276)); 
-    background: linear-gradient(180deg,rgba(19,66,118,0) 0%,#134276 100%); 
-    display: -webkit-box; 
-    display: -ms-flexbox; 
-    display: flex;
-    align-items: flex-start;
-    -webkit-box-orient: vertical; 
-    -webkit-box-direction: normal; 
-    -ms-flex-direction: column; 
-    flex-direction: column; 
-    -webkit-box-pack: end; 
-    -ms-flex-pack: end; 
-    justify-content: flex-end; 
-    gap: 5px; 
-    padding: 10px 70px 10px 10px; 
-    z-index: 1;
-} 
-
-.modelCard-wrapper .modelCard-box .modelCard-image img  { 
-    -o-object-fit: cover; 
-    object-fit: cover; 
-    height: 100%; 
-    width: 100%;
-} 
-
-.icon { 
-    font-family: 'hubite-icon'!important; 
-    speak: never; 
-    font-style: normal; 
-    font-weight: normal; 
-    font-variant: normal; 
-    text-transform: none; 
-    line-height: 1; 
-    pointer-events: none; 
-    -webkit-font-smoothing: antialiased; 
-    -moz-osx-font-smoothing: grayscale;
-} 
-
-.modelCard-wrapper .modelCard-box .modelCard-info_username  { 
-    color: white;
-} 
-
-.modelCard-wrapper .modelCard-box .modelCard-info_nickname  { 
-    color: white; 
-    font-weight: 700; 
-    font-size: 16px; 
-    margin-bottom: 0;
-} 
-
-.modelCard-wrapper .modelCard-box .modelCard-info_media  { 
-    display: -webkit-box; 
-    display: -ms-flexbox; 
-    display: flex; 
-    margin-top: 5px; 
-    gap: 15px;
-} 
-
-@media (min-width: 1025px) {
-    .modelCard-wrapper .modelCard-box .modelCard-info_price  { 
-        position: absolute; 
-        left: 0px; 
-        bottom: 264%; 
-        background-color: #134276; 
-        color: white; 
-        padding: 0rem 2rem; 
-        height: 3rem; 
-        display: -webkit-box; 
-        display: -ms-flexbox; 
-        display: flex; 
-        gap: .5rem; 
-        -webkit-box-align: center; 
-        -ms-flex-align: center; 
-        align-items: center; 
-        -webkit-box-pack: center; 
-        -ms-flex-pack: center; 
-        justify-content: center; 
-        border-radius: 0px 5rem 5rem 0px; 
-        font-weight: bold; 
-        font-size: 16px; 
-        z-index: 0;
-    } 
-}
-
-
-.modelCard-wrapper .modelCard-box .modelCard-info_media .media-item  { 
-    display: -webkit-box; 
-    display: -ms-flexbox; 
-    display: flex; 
-    -webkit-box-align: center; 
-    -ms-flex-align: center; 
-    align-items: center; 
-    gap: .5rem;
-} 
-
-.modelCard-wrapper .modelCard-box .modelCard-info_media .media-item img  { 
-    width: 17px; 
-    height: 16px; 
-    margin-right: 5px;
-} 
-
-.modelCard-wrapper .modelCard-box .modelCard-info_media .media-item span  { 
-    color: white;
-}
-
-
-/* Mobile and Tablet  */
-.modelList-wrapper { 
-    padding-bottom: 1rem; 
-    width: 100%; 
-    display: flex;  
-    justify-content: center;
-}
-
-.modelCard-wrapper { 
-    width: 100%; 
-    max-width: 350px; 
-    min-width: 350px;
-} 
-
-.modelCard-wrapper .modelCard-box  { 
+.grid-tile3 .modelCard-wrapper .modelCard-box { 
     position: relative; 
     display: flex; 
     width: 100%; 
@@ -205,11 +27,11 @@
     box-shadow: 0px 0px 4px rgba(0,0,0,0.25);
 } 
 
-.modelCard-wrapper .modelCard-box:hover { 
+.grid-tile3 .modelCard-wrapper .modelCard-box:hover { 
     box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
 } 
 
-.modelCard-wrapper .modelCard-box .modelCard-image  { 
+.grid-tile3 .modelCard-wrapper .modelCard-box .modelCard-image { 
     position: absolute; 
     width: 100%; 
     height: 100%; 
@@ -218,7 +40,7 @@
     z-index: 1;
 } 
 
-.modelCard-wrapper .modelCard-box .modelCard-profileTag  { 
+.grid-tile3 .modelCard-wrapper .modelCard-box .modelCard-profileTag { 
     position: absolute; 
     right: 10px; 
     top: 10px; 
@@ -234,9 +56,10 @@
     font-size: 14px; 
     gap: .5rem; 
     z-index: 1;
+    text-decoration: none;
 } 
 
-.modelCard-wrapper .modelCard-box .modelCard-info  { 
+.grid-tile3 .modelCard-wrapper .modelCard-box .modelCard-info { 
     pointer-events: none; 
     position: absolute; 
     bottom: 0px; 
@@ -250,25 +73,27 @@
     gap: 5px; 
     padding: 10px 70px 10px 10px; 
     z-index: 1;
+    font-size: 14px;
 } 
 
-.modelCard-wrapper .modelCard-box .modelCard-image img  { 
+.grid-tile3 .modelCard-wrapper .modelCard-box .modelCard-image img { 
     object-fit: cover; 
     height: 100%; 
     width: 100%;
 } 
 
-.modelCard-wrapper .modelCard-box .modelCard-info_media  { 
+.grid-tile3 .modelCard-wrapper .modelCard-box .modelCard-info_media { 
     display: flex; 
     margin-top: 5px; 
     gap: 15px;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
 } 
 
-.modelCard-wrapper .modelCard-box .modelCard-info_price  { 
+.grid-tile3 .modelCard-wrapper .modelCard-box .modelCard-info_price { 
     position: absolute; 
     left: 0px; 
+    bottom: 284%; 
     background-color: #134276; 
     color: white; 
     padding: 0.5rem 1rem; 
@@ -282,28 +107,27 @@
 } 
 
 @media (max-width: 1024px) {
-    .modelCard-wrapper {
+    .grid-tile3 .modelCard-wrapper {
         width: 100%;
         max-width: 100%;
         min-width: 100%;
     }
-    .modelCard-wrapper .modelCard-box .modelCard-info_username,
-    .modelCard-wrapper .modelCard-box .modelCard-info_nickname {
+    .grid-tile3 .modelCard-wrapper .modelCard-box .modelCard-info_username,
+    .grid-tile3 .modelCard-wrapper .modelCard-box .modelCard-info_nickname {
         display: flex;
         justify-content: right;
     }
-    .modelCard-wrapper .modelCard-box .modelCard-info {
+    .grid-tile3 .modelCard-wrapper .modelCard-box .modelCard-info {
         padding: 15px !important;
     }
 }
 
-
 @media (max-width: 480px) {
-    .modelCard-wrapper .modelCard-box .modelCard-info_price {
+    .grid-tile3 .modelCard-wrapper .modelCard-box .modelCard-info_price {
         top: -75px;
     }
-    .modelCard-wrapper .modelCard-box .modelCard-info_username,
-    .modelCard-wrapper .modelCard-box .modelCard-info_nickname {
+    .grid-tile3 .modelCard-wrapper .modelCard-box .modelCard-info_username,
+    .grid-tile3 .modelCard-wrapper .modelCard-box .modelCard-info_nickname {
         display: flex;
         justify-content: center;
     }
@@ -312,17 +136,11 @@
 .grid-tile3 {
     padding-bottom: 1rem;
     width: 100%;
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (minmax(320px, 350px)) [3];
     grid-template-columns: repeat(3, minmax(320px, 350px));
     gap: 40px;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
 }
-
-
 
 @media (max-width: 1024px) {
     .grid-tile3 {
@@ -336,20 +154,53 @@
         grid-template-columns: 1fr;
         gap: 20px;
     }
-
-    .modelCard-wrapper {
+    .grid-tile3 .modelCard-wrapper {
         width: 100%;
         max-width: 100%;
         min-width: 100%;
     }
-
-    .modelCard-wrapper .modelCard-box .modelCard-info {
+    .grid-tile3 .modelCard-wrapper .modelCard-box .modelCard-info {
         padding: 10px;
     }
-
-    .modelCard-wrapper .modelCard-box .modelCard-info_price {
+    .grid-tile3 .modelCard-wrapper .modelCard-box .modelCard-info_price {
         top: 10px;
         left: 10px;
         padding: 0.5rem 1rem;
     }
+}
+
+
+.grid-tile3 .modelCard-wrapper .modelCard-box .modelCard-info_nickname {
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    margin-bottom: 3px;
+}
+
+.grid-tile3 .modelCard-wrapper .modelCard-box .modelCard-info_username,
+.grid-tile3 .modelCard-wrapper .modelCard-box .modelCard-info_media .media-item span {
+    color: white;
+}
+.grid-tile3 .modelCard-wrapper .modelCard-box .modelCard-info_media .media-item  { 
+    display: -webkit-box; 
+    display: -ms-flexbox; 
+    display: flex; 
+    -webkit-box-align: center; 
+    -ms-flex-align: center; 
+    align-items: center; 
+    gap: .5rem;
+} 
+
+.grid-tile3 .modelCard-wrapper .modelCard-box .modelCard-info_media .media-item img  { 
+    width: 17px; 
+    height: 16px; 
+    margin-right: 5px;
+} 
+
+.grid-tile3 .modelCard-wrapper .modelCard-box .modelCard-info_media .media-item span  { 
+    color: white;
 }

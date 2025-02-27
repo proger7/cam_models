@@ -146,14 +146,6 @@ function enqueue_custom_scripts_for_cam_template() {
 add_action('wp_enqueue_scripts', 'enqueue_custom_scripts_for_cam_template');
 
 function tags_widget_enqueue_scripts() {
-    
-    // wp_enqueue_script(
-    //     'tags-widget-script',
-    //     get_stylesheet_directory_uri() . '/js/tags-widget.js',
-    //     array('jquery'),
-    //     null,
-    //     true
-    // );
 
     wp_localize_script('tags-widget-script', 'tagsWidgetAjax', array(
         'ajaxurl' => admin_url('admin-ajax.php')
@@ -214,9 +206,9 @@ function profile_card_grid_shortcode($atts, $content = null) {
     );
 
     if ($atts['layout'] === 'tile1') {
-        $output = '<div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-0 profile-grid tile1">';
+        $output = '<div class="tile1">';
     } elseif ($atts['layout'] === 'tile2') {
-        $output = '<div class="row">';
+        $output = '<div class="tile2">';
     } elseif ($atts['layout'] === 'tile3') {
         $output = '<div class="grid-tile3">';
     }
