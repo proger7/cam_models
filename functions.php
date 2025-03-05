@@ -620,3 +620,46 @@ function enqueue_fontawesome() {
     wp_enqueue_style('font-awesome-cdn', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css', array(), '6.0.0');
 }
 add_action('wp_enqueue_scripts', 'enqueue_fontawesome');
+
+
+
+
+function cta_popup_shortcode($atts) {
+    $atts = shortcode_atts(
+        array(
+            'text' => 'Would you like a heads up about fresh iPhone photography articles?',
+            'link' => '#',
+            'logo' => get_stylesheet_directory_uri() . '/images/cta-logo.png'
+        ), 
+        $atts, 
+        'cta_popup'
+    );
+
+    ob_start();
+    ?>
+    <div id="cta-popup" class="cta-popup">
+        <div class="cta-popup-content">
+            <div class="cta-popup-logo">
+                <img src="<?php echo esc_url($atts['logo']); ?>" alt="Logo">
+            </div>
+            <div class="cta-popup-text">
+                <p><?php echo esc_html($atts['text']); ?></p>
+            </div>
+        </div>
+        <div class="cta-popup-buttons">
+            <button class="cta-popup-btn cta-popup-no">I'm ok</button>
+            <a href="<?php echo esc_url($atts['link']); ?>" class="cta-popup-btn cta-popup-yes">Sure!</a>
+        </div>
+    </div>
+    <div id="cta-popup-overlay" class="cta-popup-overlay"></div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('cta_popup', 'cta_popup_shortcode');
+
+
+function cta_popup_assets() {
+    wp_enqueue_style('cta-popup-style', get_stylesheet_directory_uri() . '/css/cta-popup.css');
+    wp_enqueue_script('cta-popup-script', get_stylesheet_directory_uri() . '/js/cta-popup.js', array('jquery'), null, true);
+}
+add_action('wp_enqueue_scripts', 'cta_popup_assets');
