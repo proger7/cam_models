@@ -663,3 +663,9 @@ function cta_popup_assets() {
     wp_enqueue_script('cta-popup-script', get_stylesheet_directory_uri() . '/js/cta-popup.js', array('jquery'), null, true);
 }
 add_action('wp_enqueue_scripts', 'cta_popup_assets');
+
+
+function enqueue_custom_styles() {
+    wp_enqueue_style('custom-header-style', get_stylesheet_directory_uri() . '/css/custom-header.css', array(), null);
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_styles');

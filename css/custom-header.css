@@ -1,0 +1,74 @@
+.custom-header {
+    width: 100%;
+    background: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+}
+
+.header-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-container img {
+    max-height: 60px;
+}
+
+.cta-container {
+    margin-left: auto;
+}
+
+.cta-container .cta-button {
+    background: #ff3366;
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.cta-container .cta-button:hover {
+    background: #cc0033;
+}
+
+.custom-nav {
+    width: 100%;
+    background: #000;
+    padding: 5px 0;
+}
+
+.menu-container {
+    text-align: center;
+}
+
+.custom-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+}
+
+.custom-menu li {
+    display: inline-block;
+}
+
+.custom-menu li a {
+    text-decoration: underline;
+    color: #fff;
+    font-size: 18px;
+    font-weight: normal;
+    padding: 5px 10px;
+    position: relative;
+    white-space: nowrap;
+}
+.custom-menu li a:hover {
+    text-decoration: none;
+}
