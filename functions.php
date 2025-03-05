@@ -665,7 +665,34 @@ function cta_popup_assets() {
 add_action('wp_enqueue_scripts', 'cta_popup_assets');
 
 
-function enqueue_custom_styles() {
-    wp_enqueue_style('custom-header-style', get_stylesheet_directory_uri() . '/css/custom-header.css', array(), null);
+function enqueue_custom_header_styles() {
+    $selected_header = get_theme_mod('selected_header', 'saucydates');
+    wp_enqueue_style('custom-header-style', get_stylesheet_directory_uri() . "/css/custom-header-{$selected_header}.css", array(), null);
 }
-add_action('wp_enqueue_scripts', 'enqueue_custom_styles');
+add_action('wp_enqueue_scripts', 'enqueue_custom_header_styles');
+
+
+
+function custom_header_options($wp_customize) {
+    $wp_customize->add_section('custom_header_section', array(
+        'title' => 'Custom Header Options',
+        'priority' => 30,
+    ));
+
+    $wp_customize->add_setting('selected_header', array(
+        'default' => 'saucydates',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('selected_header', array(
+        'label' => 'Select Header',
+        'section' => 'custom_header_section',
+        'settings' => 'selected_header',
+        'type' => 'radio',
+        'choices' => array(
+            'saucydates' => 'Saucydates',
+            'verynaughty' => 'VeryNaughty',
+        ),
+    ));
+}
+add_action('customize_register', 'custom_header_options');

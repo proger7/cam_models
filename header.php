@@ -1,4 +1,6 @@
 <?php
+$selected_header = get_theme_mod('selected_header', 'saucydates');
+$header_file = get_stylesheet_directory() . "/headers/header-{$selected_header}.php";
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -7,29 +9,11 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<header class="custom-header">
-    <div class="header-container">
-        <div class="logo-container">
-            <?php if (has_custom_logo()) : ?>
-                <?php the_custom_logo(); ?>
-            <?php endif; ?>
-        </div>
-        <div class="cta-container">
-            <a href="#signup" class="cta-button">Join Now</a>
-        </div>
-    </div>
-</header>
-<nav class="custom-nav">
-    <div class="menu-container">
-        <?php
-        wp_nav_menu(array(
-            'theme_location' => 'primary',
-            'container' => false,
-            'menu_class' => 'custom-menu'
-        ));
-        ?>
-    </div>
-</nav>
+<?php
+if (file_exists($header_file)) {
+    include $header_file;
+}
+?>
 <?php wp_footer(); ?>
 </body>
 </html>
