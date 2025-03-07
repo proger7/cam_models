@@ -1,66 +1,226 @@
-.custom-header {
-    width: 100%;
-    background: #000;
+#imagecontainer { 
+    margin: 0 auto;
+} 
+
+@media only screen and (min-width: 768px){ 
+  #imagecontainer { 
+    width: 100%; 
+    left: 0%; 
+    padding-right: 0%; 
+    background-image: url('../images/saucydates/background-adult-dating.jpg'); 
+    background-repeat: no-repeat; 
+    background-position: center top; 
+    background-size: cover; 
+    height: 750px; 
+    border: 0px #ff0000 solid;
+  } 
+}     
+
+@media only screen and (min-width: 800px){ 
+  #imagecontainer { 
+    background-image: url('../images/saucydates/background-adult-dating.jpg'); 
+    left: 0px; 
+    padding-right: 0px;
+  } 
+}     
+
+     
+
+@media only screen and (min-width: 768px){ 
+  #signupboxdesktopcontainer { 
+    margin: 0 auto; 
+    max-width: 960px; 
+    overflow: auto; 
+    border: 0px #FF0000 dashed; 
+    text-align: center; 
+    height: 750px;
+  } 
+}     
+
+
+#calltoaction { 
+    display: none;
+} 
+
+@media only screen and (min-width: 768px){ 
+  #calltoaction { 
+    position: relative; 
+    display: inline-block; 
+    width: 44%; 
+    border: 0px #FF0000 solid; 
+    height: 200px; 
+    top: 20px; 
+    float: left; 
+    margin-left: 25px;
+  } 
+}     
+
+#signupboxdesktop { 
+    overflow: hidden;  
+    margin: 0 auto; 
+    margin-top: 0px; 
+    text-align: center; 
+    background: #000000; 
+    background-image: url('../images/saucydates/backgroundmobile-adult-dating.jpg'); 
+    background-size: cover; 
+    background-position: center center; 
+    padding: 15px;
+} 
+
+@media only screen and (min-width: 768px){ 
+  #signupboxdesktop { 
+    position: relative; 
+    display: inline-block;  
+    background: rgba(0,  0,  0, 0.0); 
+    border-radius: 5px; 
+    border: 0px #FF0000 solid; 
+    top: 20px; 
+    float: right; 
+    margin-right: 35px; 
+    align-content: center;
+  } 
+}     
+    
+
+.startbox { 
+    margin: 0 auto; 
+    margin-top: 310px; 
+    background: rgba(255, 255, 255, 0.8); 
+    padding: 10px; 
+    border-radius: 5px; 
+    text-align: left; 
+    color: #404040; 
+    font-family: sans-serif; 
+    font-size: 14px; 
+    line-height: 25px; 
+    margin-bottom: 40px; 
+    max-width: 400px;
+} 
+
+@media only screen and (min-width: 768px){ 
+  .startbox { 
+    background: rgba(255, 255, 255, 0.8); 
+    margin: 0px; 
+    font-size: 18px; 
+    line-height: 30px; 
+    padding: 20px;
+  } 
+}     
+
+#join { 
+    width: 60px;
+    padding-left: 0; 
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-}
+} 
 
-.header-container {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-}
+@media only screen and (min-width: 768px){ 
+  #join { 
+    display: none;
+  } 
+}     
 
-.logo-container img {
-    max-height: 60px;
-}
+#logo3 { 
+    width: 50%; 
+    margin-top: 5px; 
+    display: inline-block; 
+    margin-left: -35px;
+} 
 
-.cta-container {
-    margin-left: auto;
-}
+@media only screen and (min-width: 768px){ 
+  #logo3 { 
+    margin-left: 0px; 
+    width: 90%;
+  } 
+}     
 
-.cta-container .cta-button {
-    background: #ff3366;
-    color: #fff;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 18px;
-    text-transform: uppercase;
-}
-
-.cta-container .cta-button:hover {
-    background: #cc0033;
-}
-
-.custom-nav {
-    width: 100%;
-    background: #000;
-    padding: 5px 0;
-}
-
-.menu-container {
+.hotbuttonheading { 
+    font-family: 'Roboto Condensed', sans-serif; 
+    font-size: 30px; 
+    line-height: 35px; 
     text-align: center;
+} 
+
+.hotbuttonsubtext { 
+    font-family: sans-serif; 
+    margin-top: 10px; 
+    font-size: 16px; 
+    line-height: 25px; 
+    text-align: center; 
+    font-weight: 400;
+} 
+
+.startbox input { 
+    -webkit-appearance: none; 
+    -webkit-border-radius: 0; 
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+    padding: 0 !important;
+} 
+
+.startbox .startbutton3 { 
+    width: 100%; 
+    height: 60px; 
+    color: #FFFFFF; 
+    background: #870C4A; 
+    font-family: sans-serif; 
+    font-size: 18px; 
+    padding-left: 10px; 
+    border: 0px;
+} 
+
+.startbox .startbutton4 { 
+    width: 100%; 
+    height: 35px; 
+    color: #FFFFFF; 
+    background: #404040; 
+    font-family: sans-serif; 
+    font-size: 16px; 
+    padding-left: 10px; 
+    border: 0px;
+} 
+ 
+
+
+.startlogo { 
+    width: 100%;
+} 
+
+/* Menu  */
+#midmenu { 
+    display: none;
+} 
+
+@media only screen and (min-width: 768px){ 
+    #midmenu { 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    } 
 }
 
-.custom-menu {
+@media only screen and (min-width: 800px){ 
+    #midmenu { 
+        font-size: 18px;
+        padding: 10px;
+    } 
+}
+
+.saucydates-nav {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     justify-content: center;
-    gap: 70px;
 }
 
-.custom-menu li {
+.saucydates-nav li {
     display: inline-block;
+    margin: 0;
 }
 
-.custom-menu li a {
+.saucydates-nav li a {
     text-decoration: underline;
     color: #fff;
     font-size: 18px;
@@ -69,6 +229,193 @@
     position: relative;
     white-space: nowrap;
 }
-.custom-menu li a:hover {
+
+.saucydates-nav li a:hover {
     text-decoration: none;
+    color: #e52584;
+}
+
+
+/* Edits  */
+#imagecontainer { 
+    margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px){ 
+  #imagecontainer { 
+    width: 100%;
+    background-image: url('../images/saucydates/background-adult-dating.jpg'); 
+    background-repeat: no-repeat; 
+    background-position: center top; 
+    background-size: cover; 
+    height: 750px;
+  } 
+}
+
+@media only screen and (min-width: 800px){ 
+  #imagecontainer { 
+    background-image: url('../images/saucydates/background-adult-dating.jpg'); 
+  } 
+}
+
+@media only screen and (min-width: 768px){ 
+  #signupboxdesktopcontainer { 
+    margin: 0 auto; 
+    max-width: 960px; 
+    overflow: auto; 
+    text-align: center; 
+    height: 750px;
+  } 
+}
+
+#signupboxdesktop { 
+    margin: auto;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    #signupboxdesktop {
+        padding: 20px;
+    }
+}
+
+.startbox { 
+    margin-top: 50px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    color: #404040;
+    font-size: 16px;
+    line-height: 25px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.startbox .signup-title {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 28px;
+    line-height: 35px;
+    text-align: center;
+}
+
+.startbox .startbutton3 { 
+    display: block;
+    width: 100%;
+    background: #870C4A;
+    color: #fff;
+    font-size: 18px;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.startbutton3:hover { 
+    background: #a3155a;
+}
+
+.sdc-nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.sdc-nav-menu li {
+    display: inline-block;
+}
+
+.sdc-nav-menu li a {
+    color: #fff;
+    text-decoration: underline;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.sdc-nav-menu li a:hover {
+    color: #e52584;
+}
+
+
+/* Mobile menu  */
+.mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+
+#mobile-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+#mobile-menu .mobile-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#mobile-menu .mobile-menu-list li {
+    padding: 10px;
+}
+
+#mobile-menu .mobile-menu-list li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#mobile-menu .mobile-menu-list li a:hover {
+    color: #e52584;
+}
+
+@media (max-width: 768px) {
+    .sdc-nav-menu {
+        display: none;
+    }
+
+    #mobile-menu {
+        display: none;
+    }
+
+    .menu-open #mobile-menu {
+        display: block;
+        top: 0;
+    }
+
+    .close-menu {
+        font-size: 40px;
+        position: absolute;
+        right: 0;
+        top: -20px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .mobile-menu-header {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+    }
+
+}
+
+body.admin-bar #mobile-menu {
+    top: 46px;
 }

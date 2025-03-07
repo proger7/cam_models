@@ -1,5 +1,6 @@
 <?php
 
+
 function enqueue_custom_jquery_for_cam_template() {
     if (is_page_template('page-cam-template.php')) {
         wp_deregister_script('jquery');
@@ -696,3 +697,10 @@ function custom_header_options($wp_customize) {
     ));
 }
 add_action('customize_register', 'custom_header_options');
+
+
+function custom_theme_scripts() {
+    wp_enqueue_script('custom-mobile-menu', get_stylesheet_directory_uri() . '/js/custom-header-saucydates.js', array(), null, true);
+}
+
+add_action('wp_enqueue_scripts', 'custom_theme_scripts');
