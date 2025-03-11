@@ -700,7 +700,8 @@ add_action('customize_register', 'custom_header_options');
 
 
 function custom_theme_scripts() {
-    wp_enqueue_script('custom-mobile-menu', get_stylesheet_directory_uri() . '/js/custom-header-saucydates.js', array(), null, true);
+    wp_enqueue_script('custom-mobile-menu1', get_stylesheet_directory_uri() . '/js/custom-header-saucydates.js', array(), null, true);
+    wp_enqueue_script('custom-mobile-menu2', get_stylesheet_directory_uri() . '/js/custom-header-verynaughty.js', array(), null, true);
 }
 
 add_action('wp_enqueue_scripts', 'custom_theme_scripts');

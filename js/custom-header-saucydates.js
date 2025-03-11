@@ -4,6 +4,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const mobileMenu = document.querySelector("#mobile-menu");
     const body = document.body;
 
+    if (!menuToggle || !closeMenu || !mobileMenu) {
+        console.error("Menu elements not found");
+        return;
+    }
+
     const adminBar = document.querySelector("#wpadminbar");
     if (adminBar) {
         body.classList.add("admin-bar");
