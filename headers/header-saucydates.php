@@ -14,9 +14,6 @@
                 <div id="join" class="menu-toggle">
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/saucydates/mobilemenu-white.svg" class="mobilemenu" alt="Menu">
                 </div>
-                <div id="logo3">
-                    <a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/saucydates/logo2.svg" class="startlogo"></a>
-                </div>
             </div>
 
             <nav id="mobile-menu" class="mobile-nav">

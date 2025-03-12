@@ -118,20 +118,7 @@
     display: none;
   } 
 }     
-
-#logo3 { 
-    width: 50%; 
-    margin-top: 5px; 
-    display: inline-block; 
-    margin-left: -35px;
-} 
-
-@media only screen and (min-width: 768px){ 
-  #logo3 { 
-    margin-left: 0px; 
-    width: 90%;
-  } 
-}     
+     
 
 .hotbuttonheading { 
     font-family: 'Roboto Condensed', sans-serif; 
