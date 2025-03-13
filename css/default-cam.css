@@ -1,0 +1,148 @@
+.camTemplateItem__wrapper,
+.camTemplateItem__wrapper::before,
+.camTemplateItem__wrapper::after,
+.camTemplateItem__wrapper *,
+.camTemplateItem__wrapper *::before,
+.camTemplateItem__wrapper *::after {
+	box-sizing: border-box;
+}
+.camTemplateItem__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+	max-width: 100%;
+	min-width: 319px;
+}
+.camTemplateItem__row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
+.camTemplateItem__item-col {
+	flex: 1 0 100%;
+	max-width: 100%;
+}
+@media(min-width: 500px) {
+	.camTemplateItem__item-col {
+		max-width: 50%;
+	}
+}
+@media(min-width: 768px) {
+	.camTemplateItem__item-col {
+		max-width: 33.333334%;
+	}
+}
+@media(min-width: 1040px) {
+	.camTemplateItem__item-col {
+		max-width: 25%;
+	}
+}
+@media(min-width: 1366px) {
+	.camTemplateItem__item-col {
+		max-width: 20%;
+	}
+}
+.camTemplateItem__item-col .camTemplateItem {
+	display: block;
+	position: relative;
+}
+.camTemplateItem__item-col .camTemplateItem__image {
+	display: block;
+	position: relative;
+	overflow: hidden;
+	height: 0;
+	padding-top: 75%;
+}
+.camTemplateItem__item-col .camTemplateItem__image > .camTemplateItem--image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+.camTemplateItem__modelWrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transition: 0.1s;
+	overflow: hidden;
+}
+.camTemplateItem__modelInfoWrapper {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	margin: auto 0 0 0;
+	transition: 0.2s;
+	transform: translateY(33px);
+}
+.camTemplateItem__modelInfo {
+	margin: auto 0 0 0;
+	background: rgba(0, 0, 0, 0.767);
+	padding: 6px 8px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	transition: 0.2s;
+}
+.camTemplateItem__modelName {
+	font-size: 18px;
+	font-weight: 500;
+	color: white;
+	margin: 0 auto 0 0;
+}
+.camTemplateItem__modelEthnicity {
+	background: rgba(0, 0, 0, 0.767);
+	padding: 4px 8px;
+	width: 100%;
+	height: 33px;
+	line-height: 25px;
+	font-size: 16px;
+	font-weight: 500;
+	text-decoration: none;
+	color: white;
+	text-align: center;
+}
+.camTemplateItem__name {
+	color: #faf575;
+}
+.camTemplateItem:hover .camTemplateItem__modelInfoWrapper {
+	transform: translateY(0);
+}
+.camTemplateItem:hover .camTemplateItem__modelInfo {
+	background-color: rgba(255, 65, 87,0.767);
+}
+.camApiShowMore__box {
+	flex: 1 0 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+.camApiShowMore {
+	margin: 0 auto;
+	display: inline-flex;
+	padding: 5px 10px;
+	font-size: 18px;
+	font-weight: 500;
+	background-color: #ff4157;
+	color: #fff;
+	border-radius: 4px;
+	text-decoration: none;
+	text-transform: capitalize;
+	border: 2px solid #ff4157;
+	transition: .2s;
+}
+.camApiShowMore:hover {
+	background-color: #fff;
+	color: #ff4157;
+}

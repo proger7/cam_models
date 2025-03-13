@@ -7,7 +7,7 @@ function enqueue_custom_jquery_for_cam_template() {
         wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js', array(), null, true);
         wp_enqueue_script('jquery');
         wp_enqueue_script('cams-api', 'https://softwareapi.org/api/cams.php', array('jquery'), null, true);
-        wp_enqueue_style('cam-template-styles', 'https://softwareapi.org/api/default.css');
+        wp_enqueue_style('cam-template-styles', get_stylesheet_directory_uri() . '/css/default-cam.css');
     }
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_jquery_for_cam_template');
