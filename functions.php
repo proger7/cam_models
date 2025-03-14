@@ -666,12 +666,12 @@ function cta_popup_assets() {
 add_action('wp_enqueue_scripts', 'cta_popup_assets');
 
 
+/* Header Patterns */
 function enqueue_custom_header_styles() {
     $selected_header = get_theme_mod('selected_header', 'saucydates');
     wp_enqueue_style('custom-header-style', get_stylesheet_directory_uri() . "/css/custom-header-{$selected_header}.css", array(), null);
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_header_styles');
-
 
 
 function custom_header_options($wp_customize) {
@@ -695,13 +695,36 @@ function custom_header_options($wp_customize) {
             'verynaughty' => 'VeryNaughty',
         ),
     ));
+
+    $wp_customize->add_setting('custom_header_image_saucydates', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'custom_header_image_saucydates', array(
+        'label' => 'Background Image for Saucydates Header',
+        'section' => 'custom_header_section',
+        'settings' => 'custom_header_image_saucydates',
+    )));
+
+    $wp_customize->add_setting('custom_header_image_verynaughty', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'custom_header_image_verynaughty', array(
+        'label' => 'Background Image for VeryNaughty Header',
+        'section' => 'custom_header_section',
+        'settings' => 'custom_header_image_verynaughty',
+    )));
 }
 add_action('customize_register', 'custom_header_options');
 
 
-function custom_theme_scripts() {
-    wp_enqueue_script('custom-mobile-menu1', get_stylesheet_directory_uri() . '/js/custom-header-saucydates.js', array(), null, true);
-    wp_enqueue_script('custom-mobile-menu2', get_stylesheet_directory_uri() . '/js/custom-header-verynaughty.js', array(), null, true);
-}
 
+function custom_theme_scripts() {
+    $selected_header = get_theme_mod('selected_header', 'saucydates');
+    wp_enqueue_script('custom-mobile-menu', get_stylesheet_directory_uri() . "/js/custom-header-{$selected_header}.js", array(), null, true);
+}
 add_action('wp_enqueue_scripts', 'custom_theme_scripts');
+

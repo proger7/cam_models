@@ -6,16 +6,13 @@
             'menu_class' => 'sdc-nav-menu'
         )); ?>
     </div>
-
     <div id="signupboxdesktopcontainer">
-        <div id="calltoaction"></div>
         <div id="signupboxdesktop" class="signup-container">
             <div class="mobile-header">
                 <div id="join" class="menu-toggle">
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/saucydates/mobilemenu-white.svg" class="mobilemenu" alt="Menu">
                 </div>
             </div>
-
             <nav id="mobile-menu" class="mobile-nav">
                 <div class="mobile-menu-header">
                     <span class="close-menu">&times;</span>
@@ -26,7 +23,6 @@
                     'menu_class' => 'mobile-menu-list'
                 )); ?>
             </nav>
-
             <div class="startbox">
                 <div class="signup-content">
                     <h2 class="signup-title">Sign up here</h2>
