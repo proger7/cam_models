@@ -707,6 +707,17 @@ function custom_header_options($wp_customize) {
         'settings' => 'custom_header_image_saucydates',
     )));
 
+    $wp_customize->add_setting('custom_header_image_saucydates_mobile', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'custom_header_image_saucydates_mobile', array(
+        'label' => 'Mobile Background Image for Saucydates Header',
+        'section' => 'custom_header_section',
+        'settings' => 'custom_header_image_saucydates_mobile',
+    )));
+
     $wp_customize->add_setting('custom_header_image_verynaughty', array(
         'default' => '',
         'sanitize_callback' => 'esc_url_raw',
@@ -717,8 +728,20 @@ function custom_header_options($wp_customize) {
         'section' => 'custom_header_section',
         'settings' => 'custom_header_image_verynaughty',
     )));
+
+    $wp_customize->add_setting('custom_header_image_verynaughty_mobile', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'custom_header_image_verynaughty_mobile', array(
+        'label' => 'Mobile Background Image for VeryNaughty Header',
+        'section' => 'custom_header_section',
+        'settings' => 'custom_header_image_verynaughty_mobile',
+    )));
 }
 add_action('customize_register', 'custom_header_options');
+
 
 
 

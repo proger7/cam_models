@@ -2,16 +2,20 @@
     <div class="container">
         <div class="row">
             <div id="woman_and_form" class="col-md-12 col-xs-12">
+                <br clear="all">
                 <div id="form_holder" class="col-md-5 col-xs-12 col-md-offset-6">
                     <h1>Sign up here</h1>
                     <div class="signup">
                         <a class="signup-button" href='https://www.verynaughty.co.uk/adultdating/register.php'>Register for free</a>
                     </div>
                 </div>
+                <br clear="all">
+                <br>
             </div>
         </div>
     </div>
 </header>
+
 <div id="home_nav">
     <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
         <div class="container">
@@ -36,3 +40,21 @@
         </div>
     </nav>
 </div>
+
+<style>
+    #home_top {
+        background-image: url('<?php echo esc_url($header_bg); ?>');
+        background-size: cover;
+        background-position: center;
+    }
+
+    @media (max-width: 768px) {
+        #home_top {
+            background-image: url('<?php echo esc_url($header_bg_mobile); ?>') !important;
+        }
+
+        #woman_and_form {
+            background-image: none !important;
+        }
+    }
+</style>
