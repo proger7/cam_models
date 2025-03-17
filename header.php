@@ -1,26 +1,15 @@
 <?php
 $selected_header = get_theme_mod('selected_header', 'saucydates');
 
-if ($selected_header === 'saucydates') {
-    $header_bg = get_theme_mod('custom_header_image_saucydates', '');
-    $header_bg_mobile = get_theme_mod('custom_header_image_saucydates_mobile', '');
-    
-    if (empty($header_bg)) {
-        $header_bg = get_stylesheet_directory_uri() . '/images/saucydates/background-adult-dating.jpg';
-    }
-    if (empty($header_bg_mobile)) {
-        $header_bg_mobile = $header_bg;
-    }
-} else {
-    $header_bg = get_theme_mod('custom_header_image_verynaughty', '');
-    $header_bg_mobile = get_theme_mod('custom_header_image_verynaughty_mobile', '');
-    
-    if (empty($header_bg)) {
-        $header_bg = get_stylesheet_directory_uri() . '/images/verynaughty/background-adult-dating.jpg';
-    }
-    if (empty($header_bg_mobile)) {
-        $header_bg_mobile = $header_bg;
-    }
+$header_bg = get_theme_mod("custom_header_image_{$selected_header}_cdn", '') ?: get_theme_mod("custom_header_image_{$selected_header}", '');
+$header_bg_mobile = get_theme_mod("custom_header_image_{$selected_header}_mobile_cdn", '') ?: get_theme_mod("custom_header_image_{$selected_header}_mobile", '');
+
+if (empty($header_bg)) {
+    $header_bg = get_stylesheet_directory_uri() . "/images/{$selected_header}/background-adult-dating.jpg";
+}
+
+if (empty($header_bg_mobile)) {
+    $header_bg_mobile = $header_bg;
 }
 
 $header_file = get_stylesheet_directory() . "/headers/header-{$selected_header}.php";

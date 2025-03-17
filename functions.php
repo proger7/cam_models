@@ -674,6 +674,7 @@ function enqueue_custom_header_styles() {
 add_action('wp_enqueue_scripts', 'enqueue_custom_header_styles');
 
 
+
 function custom_header_options($wp_customize) {
     $wp_customize->add_section('custom_header_section', array(
         'title' => 'Custom Header Options',
@@ -696,51 +697,57 @@ function custom_header_options($wp_customize) {
         ),
     ));
 
-    $wp_customize->add_setting('custom_header_image_saucydates', array(
-        'default' => '',
-        'sanitize_callback' => 'esc_url_raw',
-    ));
+    $headers = ['saucydates', 'verynaughty'];
+    foreach ($headers as $header) {
+        $wp_customize->add_setting("custom_header_image_{$header}", array(
+            'default' => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
 
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'custom_header_image_saucydates', array(
-        'label' => 'Background Image for Saucydates Header',
-        'section' => 'custom_header_section',
-        'settings' => 'custom_header_image_saucydates',
-    )));
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "custom_header_image_{$header}", array(
+            'label' => "Background Image for " . ucfirst($header) . " Header",
+            'section' => 'custom_header_section',
+            'settings' => "custom_header_image_{$header}",
+        )));
 
-    $wp_customize->add_setting('custom_header_image_saucydates_mobile', array(
-        'default' => '',
-        'sanitize_callback' => 'esc_url_raw',
-    ));
+        $wp_customize->add_setting("custom_header_image_{$header}_cdn", array(
+            'default' => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
 
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'custom_header_image_saucydates_mobile', array(
-        'label' => 'Mobile Background Image for Saucydates Header',
-        'section' => 'custom_header_section',
-        'settings' => 'custom_header_image_saucydates_mobile',
-    )));
+        $wp_customize->add_control("custom_header_image_{$header}_cdn", array(
+            'label' => "CDN Image URL for " . ucfirst($header) . " Header",
+            'section' => 'custom_header_section',
+            'settings' => "custom_header_image_{$header}_cdn",
+            'type' => 'text',
+        ));
 
-    $wp_customize->add_setting('custom_header_image_verynaughty', array(
-        'default' => '',
-        'sanitize_callback' => 'esc_url_raw',
-    ));
+        $wp_customize->add_setting("custom_header_image_{$header}_mobile", array(
+            'default' => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
 
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'custom_header_image_verynaughty', array(
-        'label' => 'Background Image for VeryNaughty Header',
-        'section' => 'custom_header_section',
-        'settings' => 'custom_header_image_verynaughty',
-    )));
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "custom_header_image_{$header}_mobile", array(
+            'label' => "Mobile Background Image for " . ucfirst($header) . " Header",
+            'section' => 'custom_header_section',
+            'settings' => "custom_header_image_{$header}_mobile",
+        )));
 
-    $wp_customize->add_setting('custom_header_image_verynaughty_mobile', array(
-        'default' => '',
-        'sanitize_callback' => 'esc_url_raw',
-    ));
+        $wp_customize->add_setting("custom_header_image_{$header}_mobile_cdn", array(
+            'default' => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
 
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'custom_header_image_verynaughty_mobile', array(
-        'label' => 'Mobile Background Image for VeryNaughty Header',
-        'section' => 'custom_header_section',
-        'settings' => 'custom_header_image_verynaughty_mobile',
-    )));
+        $wp_customize->add_control("custom_header_image_{$header}_mobile_cdn", array(
+            'label' => "CDN Mobile Image URL for " . ucfirst($header) . " Header",
+            'section' => 'custom_header_section',
+            'settings' => "custom_header_image_{$header}_mobile_cdn",
+            'type' => 'text',
+        ));
+    }
 }
 add_action('customize_register', 'custom_header_options');
+
 
 
 
